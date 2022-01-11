@@ -1,0 +1,14 @@
+@@ Commands related to a remote repository:
+1. git clone git@github.com:USER-NAME/REPOSITORY-NAME.git
+2. git push or git push origin main (both accomplish the same goal in this context)
+
+@@ Commands related to workflow
+1. git add . and git add * (git add * doesn't add hidden files, while git add . does)
+2. git commit -m "A message describing what you have done to make this snapshot different
+
+@@ Commands related to checking status or log history
+1. git status
+2. git log
+
+@@ The basic git syntax is:
+program | action | destination
