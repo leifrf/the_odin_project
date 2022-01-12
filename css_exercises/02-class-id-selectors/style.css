@@ -1,0 +1,23 @@
+#number-two {
+  font-size: 30px;
+  color: blue;
+  font-weight: bold;
+}
+
+#number-four {
+  color: black;
+  background-color: lawngreen;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.red {
+  background-color: lightcoral;
+  font-size: 15px;
+}
+
+.cooler-red {
+  background-color: lightcoral;
+  font-size: 20px;
+  font-weight: bold;
+}
