@@ -103,14 +103,14 @@ scissorsBtn.addEventListener("click", () => {
 function unitTest() {
   // Player = Rock
   playRPS("ROCK", "ROCK");
-  playRPS("ROCK", "SCISSOR");
+  playRPS("ROCK", "SCISSORS");
   playRPS("ROCK", "PAPER");
   // Player = PAPER
   playRPS("PAPER", "ROCK");
-  playRPS("PAPER", "SCISSOR");
+  playRPS("PAPER", "SCISSORS");
   playRPS("PAPER", "PAPER");
-  // Player = SCISSOR
-  playRPS("SCISSOR", "ROCK");
-  playRPS("SCISSOR", "SCISSOR");
-  playRPS("SCISSOR", "PAPER");
+  // Player = SCISSORS
+  playRPS("SCISSORS", "ROCK");
+  playRPS("SCISSORS", "SCISSORS");
+  playRPS("SCISSORS", "PAPER");
 }
