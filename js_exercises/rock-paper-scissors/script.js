@@ -107,3 +107,5 @@ function unitTest() {
   playRPS("SCISSORS", "SCISSORS");
   playRPS("SCISSORS", "PAPER");
 }
+
+unitTest();
