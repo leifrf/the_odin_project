@@ -64,6 +64,10 @@ function winOrLose() {
   }
 }
 
+function gameOver() {
+  return playerScore !== 5 && computerScore !== 5;
+}
+
 /////////////////////////////////////////////////////
 
 const rockBtn = document.querySelector("#rock");
@@ -71,19 +75,19 @@ const paperBtn = document.querySelector("#paper");
 const scissorsBtn = document.querySelector("#scissors");
 
 rockBtn.addEventListener("click", () => {
-  if (playerScore !== 5 && computerScore !== 5) {
+  if (gameOver()) {
     playRPS("ROCK");
     winOrLose();
   }
 });
 paperBtn.addEventListener("click", () => {
-  if (playerScore !== 5 && computerScore !== 5) {
+  if (gameOver()) {
     playRPS("PAPER");
     winOrLose();
   }
 });
 scissorsBtn.addEventListener("click", () => {
-  if (playerScore !== 5 && computerScore !== 5) {
+  if (gameOver()) {
     playRPS("SCISSORS");
     winOrLose();
   }
