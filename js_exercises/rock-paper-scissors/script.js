@@ -50,43 +50,39 @@ function playRPS(playerSelection, computerPlay = computerSelection()) {
 // write another function called game(). use the previous function that plays a single round of RPS inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end
 
 function game() {
-  let winningScore = 2;
+  const winningScore = 2;
   let computerWins = 0;
   let playerWins = 0;
-  let rounds = 0;
+  let rounds = 1;
 
   while (playerWins < winningScore && computerWins < winningScore) {
-    let playerMove = capitalize(prompt("What's your move?: "));
-    let computerMove = computerSelection();
-    let roundResult = playRPS(playerMove, computerMove);
+    const playerMove = capitalize(prompt("What's your move?: "));
+    const computerMove = computerSelection();
+    const roundResult = playRPS(playerMove, computerMove);
 
     console.log(`Current round: ${rounds}`);
 
     if (roundResult.search("You win!") > -1) {
       playerWins++;
       console.log(roundResult);
-      rounds++;
     } else if (roundResult.search("You lose!") > -1) {
       computerWins++;
       console.log(roundResult);
-      rounds++;
     } else {
       console.log(roundResult);
-      rounds++;
     }
+    rounds++;
   }
 
+  const finalResult = `
+    Number of Rounds: ${rounds - 1}
+    Scores:
+    You: ${playerWins}
+    Computer: ${computerWins}`;
+
   if (playerWins === winningScore) {
-    console.log(`You win!
-    Number of Rounds: ${rounds}
-    Scores:
-    You: ${playerWins}
-    Computer: ${computerWins}`);
+    console.log(`You win! ${finalResult}`);
   } else {
-    console.log(`You lost...
-    Number of Rounds: ${rounds}
-    Scores:
-    You: ${playerWins}
-    Computer: ${computerWins}`);
+    console.log(`You lost...${finalResult}`);
   }
 }
