@@ -54,6 +54,16 @@ function playRPS(playerSelection, computerSelection = getRandomChoice()) {
   }
 }
 
+function winOrLose() {
+  if (playerScore === 5) {
+    console.log("You win!");
+  }
+
+  if (computerScore === 5) {
+    console.log("You lost!");
+  }
+}
+
 /////////////////////////////////////////////////////
 
 const rockBtn = document.querySelector("#rock");
@@ -63,40 +73,19 @@ const scissorsBtn = document.querySelector("#scissors");
 rockBtn.addEventListener("click", () => {
   if (playerScore !== 5 && computerScore !== 5) {
     playRPS("ROCK");
-
-    if (playerScore === 5) {
-      console.log("You win!");
-    }
-
-    if (computerScore === 5) {
-      console.log("You lost!");
-    }
+    winOrLose();
   }
 });
 paperBtn.addEventListener("click", () => {
   if (playerScore !== 5 && computerScore !== 5) {
     playRPS("PAPER");
-
-    if (playerScore === 5) {
-      console.log("You win!");
-    }
-
-    if (computerScore === 5) {
-      console.log("You lost!");
-    }
+    winOrLose();
   }
 });
 scissorsBtn.addEventListener("click", () => {
   if (playerScore !== 5 && computerScore !== 5) {
     playRPS("SCISSORS");
-
-    if (playerScore === 5) {
-      console.log("You win!");
-    }
-
-    if (computerScore === 5) {
-      console.log("You lost!");
-    }
+    winOrLose();
   }
 });
 
