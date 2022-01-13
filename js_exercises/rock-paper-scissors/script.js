@@ -47,32 +47,49 @@ function playRPS(playerSelection, computerPlay = computerSelection()) {
   }
 }
 
-// write another function called game(). use the previous function that plays a single round of RPS inside of this one to play a 5 round game that keeps score and reports a winner or loser at the end
+const rockBtnElement = document.querySelector("#rock");
+const paperBtnElement = document.querySelector("#paper");
+const scissorsBtnElement = document.querySelector("#scissors");
 
 function game() {
-  const winningScore = 2;
+  const winningScore = 5;
   let computerWins = 0;
   let playerWins = 0;
   let rounds = 1;
+  let playerMove = "";
 
-  while (playerWins < winningScore && computerWins < winningScore) {
-    const playerMove = capitalize(prompt("What's your move?: "));
-    const computerMove = computerSelection();
-    const roundResult = playRPS(playerMove, computerMove);
-
-    console.log(`Current round: ${rounds}`);
-
-    if (roundResult.search("You win!") > -1) {
-      playerWins++;
-      console.log(roundResult);
-    } else if (roundResult.search("You lose!") > -1) {
-      computerWins++;
-      console.log(roundResult);
-    } else {
-      console.log(roundResult);
+  rockBtnElement.addEventListener("click", () => {
+    if (playRPS("Rock")) {
+      playerMove === "Rock";
     }
-    rounds++;
+  });
+
+  paperBtnElement.addEventListener("click", () => {
+    if (playRPS("Paper")) {
+      playerMove === "Paper";
+    }
+  });
+  scissorsBtnElement.addEventListener("click", () => {
+    if (playRPS("Scissors")) {
+      playerMove === "Scissors";
+    }
+  });
+
+  const computerMove = computerSelection();
+  const roundResult = playRPS(playerMove, computerMove);
+
+  console.log(`Current round: ${rounds}`);
+
+  if (roundResult.search("You win!") > -1) {
+    playerWins++;
+    console.log(roundResult);
+  } else if (roundResult.search("You lose!") > -1) {
+    computerWins++;
+    console.log(roundResult);
+  } else {
+    console.log(roundResult);
   }
+  rounds++;
 
   const finalResult = `
     Number of Rounds: ${rounds - 1}
